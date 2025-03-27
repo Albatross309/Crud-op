@@ -115,3 +115,7 @@ func deleteUser(c echo.Context) error {
 	defer lock.Unlock()
 	return c.JSON(http.StatusOK, users)
 }
+
+// func CrudRoutes(router *mux.Router)  {
+// 	router.HandleFunc("")
+// }
