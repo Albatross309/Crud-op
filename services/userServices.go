@@ -26,7 +26,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	if err = json.Unmarshal(body, &newUser); handleGenericError(w, "Failed to unmarshal request body!", err) {
 		return
 	}
-	db, err := database.DbConnectionn()
+	db, err := database.DbConnection()
 	if handleGenericError(w, "Failed to connect to the database!", err) {
 		return
 	}
@@ -48,7 +48,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Successfully created user %d", createdID)
 }
 func GetUsers(w http.ResponseWriter, r *http.Request) {
-	db, err := database.DbConnectionn()
+	db, err := database.DbConnection()
 	if handleGenericError(w, "Failed to connect to the database!", err) {
 		return
 	}
@@ -84,7 +84,7 @@ func GetUserByID(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, err := database.DbConnectionn()
+	db, err := database.DbConnection()
 	if handleGenericError(w, "Failed to connect to the database!", err) {
 		return
 	}
@@ -123,7 +123,7 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	if err = json.Unmarshal(body, &updateUser); handleGenericError(w, "Failed to unmarshal request body!", err) {
 		return
 	}
-	db, err := database.DbConnectionn()
+	db, err := database.DbConnection()
 	if handleGenericError(w, "Failed to coonect to the database!", err) {
 		return
 	}
@@ -145,7 +145,7 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	if handleGenericError(w, "Failed to convert parameter to integer", err) {
 		return
 	}
-	db, err := database.DbConnectionn()
+	db, err := database.DbConnection()
 	if handleGenericError(w, "Failed to connect to the database!", err) {
 		return
 	}

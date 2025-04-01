@@ -18,6 +18,6 @@ func main() {
 	router.HandleFunc("/users", userServices.UpdateUser).Methods(http.MethodPut)
 	router.HandleFunc("/users", userServices.DeleteUser).Methods(http.MethodDelete)
 
-	fmt.Print("Listenning on 1323")
+	fmt.Print("Starting server at port")
 	log.Fatal(http.ListenAndServe(":1323", router))
 }
