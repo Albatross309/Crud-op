@@ -8,6 +8,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+// var DB *sql.DB
 func CreateUser(c echo.Context) error {
 	u := new(models.User)
 	if err := c.Bind(u); err != nil {
@@ -22,7 +23,6 @@ func CreateUser(c echo.Context) error {
 	return c.JSON(http.StatusCreated, u)
 }
 
-// Get all users
 func GetUsers(c echo.Context) error {
 	rows, err := database.DB.Query("SELECT id, name, email FROM users")
 	if err != nil {

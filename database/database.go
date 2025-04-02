@@ -8,11 +8,24 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+// func DbConnection() (*sql.DB, error) {
+// 	connectionString := "root:albatross@/devbook?charset=utf8&parseTime=True&loc=Local"
+
+// 	db, err := sql.Open("mysql", connectionString)
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	if err = db.Ping(); err != nil {
+// 		return nil, err
+// 	}
+// 	return db, nil
+// }
+
 var DB *sql.DB
 
 func ConnectDB() {
 	var err error
-	DB, err = sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)/testdb")
+	DB, err = sql.Open("mysql", "root:albatross@/devbook?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		log.Fatal("Failed to connect to the database!", err)
 	}
