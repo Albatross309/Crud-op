@@ -10,12 +10,11 @@ import (
 )
 
 func main() {
-	// Initialize Database
+
 	database.ConnectDB()
 
 	e := echo.New()
 
-	// Define Routes
 	routes.UserRoutes(e)
 
 	fmt.Println("Server started at :1323")
