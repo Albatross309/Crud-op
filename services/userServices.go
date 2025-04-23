@@ -14,7 +14,6 @@ func CreateUser(c echo.Context) error {
 	if err := c.Bind(u); err != nil {
 		return err
 	}
-
 	_, err := database.DB.Exec("INSERT INTO users (name, email) VALUES (?, ?)", u.Name, u.Email)
 	if err != nil {
 		return err
