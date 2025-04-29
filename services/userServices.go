@@ -8,7 +8,24 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+// type service struct {
+// 	Connect() error
+// 	Close() error
+// 	CreateUser(name string) error
+// }
+
 // var DB *sql.DB
+// type userser struct{}
+
+// func (r *userser)createTable {
+// 	query:=
+// 	CREATE TABLE IF NOT EXISTS users(
+// 		id SERIAL PEIMARY KEY,
+// 		name TEXT NOT NULL,
+// 		email TEXT NOR NULL
+// 	)
+// }
+
 func CreateUser(c echo.Context) error {
 	u := new(models.User)
 	if err := c.Bind(u); err != nil {

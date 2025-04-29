@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: crud
+    environment:
+      # DB_HOST: ${DB_HOST}
+      # DB_PORT: ${DB_PORT}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "1323:1323"
+#     networks:
+#       - mynet
+# networks:
+#   mynet:
+#     driver: bridge
+    volumes:
+      - data:/var/lib/postgresql/data
+volumes:
+  data:
+  pgdata:
+
+  # go: 
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: go-albatross
+  #   environment:
+  #     - DB_HOST=localhost
+  #     - DB_PORT=5432
+  #     - DB_USER=efine_demo
+  #     - DB_PASSWORD=crystalmoon
+  #     - DB_NAME=demo2
+  #   ports:
+  #     - "8080:8080"
